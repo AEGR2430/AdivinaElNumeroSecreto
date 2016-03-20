@@ -1,20 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import java.util.Scanner;
+import model.Juego;
 
-/**
- *
- * @author PATRICIA
- */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner entrada = new Scanner(System.in);
+        
+        int numero;
+        boolean seAdivinoElNumeroSecreto = false;
+        Juego juego = new Juego(1, 100, 5);
+        
+        while (juego.puedeIntentarDeNuevo() == true && !seAdivinoElNumeroSecreto) {
+            System.out.print("Adivine el número secreto: ");
+            numero = entrada.nextInt();
+            seAdivinoElNumeroSecreto = juego.esElNumeroSecreto(numero);
+            
+            if (seAdivinoElNumeroSecreto){
+                System.out.println("Felicidades, haz adivinado el número secreto.");
+            }
+            else {
+                System.out.println("Falaste, el número secreto es " + juego.getTextoDeAyuda(numero) 
+                                    + " que el número proporcionado");
+                System.out.println("Intentalo nuevamente.");
+            }
+        }
+        System.out.println("El número secreto es " + juego.getNumeroSecreto());
     }
-    
 }
