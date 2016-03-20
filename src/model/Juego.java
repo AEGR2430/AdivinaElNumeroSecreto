@@ -44,7 +44,7 @@ public class Juego {
         }
         return texto;
     }
-    public int getNumeroSecreto(){
+        public int getNumeroSecreto(){
         return this.numeroSecreto.getNumeroSecreto();
     }
 }

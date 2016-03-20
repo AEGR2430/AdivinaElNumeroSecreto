@@ -55,7 +55,7 @@ public class NumeroSecreto {
     public boolean esMenor (int numero){
         boolean elNumeroSecretoEsMenor = false;
         if (this.numero < numero){
-            elNumeroSecretoEsMenor = true;
+            elNumeroSecretoEsMenor =  true;
         }
         return elNumeroSecretoEsMenor;
     }
